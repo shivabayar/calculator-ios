@@ -13,14 +13,33 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var digit: UILabel!
     
+    var isTyping = false
+    var canOperandBeEntered = false
+    
     @IBAction func displayDigit(sender: UIButton) {
         let number = sender.currentTitle!
         
-        println("button=\(number)")
+        if (isTyping) {
+            digit.text =  digit.text! + number
+        } else {
+            isTyping = true
+            digit.text =  number
+        }
+        canOperandBeEntered = true
+    }
+    
+    @IBAction func calculate(sender: UIButton) {
+        let operand = sender.currentTitle!
         
-        
-        digit.text =  digit.text! + number
-        
+        if(canOperandBeEntered) {
+            if (isTyping) {
+                digit.text =  digit.text! + operand
+            } else {
+                isTyping = true
+                digit.text =  operand
+            }
+        }
+        canOperandBeEntered = false
     }
     
 }
