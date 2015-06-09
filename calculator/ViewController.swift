@@ -13,11 +13,24 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var digit: UILabel!
     
+    var expressionStack = Array<Double>();
+    
     var isTyping = false
     var canOperandBeEntered = false
+    var number = "0"
+    
+    var displayValue : Double {
+        get{
+            return NSNumberFormatter().numberFromString("\(number)")!.doubleValue
+        }
+        set{
+//            digit.text = "\(newValue)"
+//            isTyping = false
+        }
+    }
     
     @IBAction func displayDigit(sender: UIButton) {
-        let number = sender.currentTitle!
+        number = sender.currentTitle!
 
         if (isTyping) {
             digit.text =  digit.text! + number
@@ -28,17 +41,24 @@ class ViewController: UIViewController {
         canOperandBeEntered = true
     }
     
+   
+    
     @IBAction func calculate(sender: UIButton) {
         let operand = sender.currentTitle!
         
+        println("operand=\(operand)")
+        
         if(canOperandBeEntered) {
-            if (isTyping) {
+            expressionStack.append(displayValue)
+            if (!canOperandBeEntered) {
                 digit.text =  digit.text! + operand
-            } else {
-                isTyping = true
-                digit.text =  operand
             }
+//            else {
+//                isTyping = true
+//                digit.text =  operand
+//            }
         }
+        println("stack = \(expressionStack)")
         canOperandBeEntered = false
     }
     
