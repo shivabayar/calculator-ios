@@ -47,17 +47,11 @@ class ViewController: UIViewController {
         let operand = sender.currentTitle!
         
         println("operand=\(operand)")
-        
-        if(canOperandBeEntered) {
-            expressionStack.append(displayValue)
-            if (!canOperandBeEntered) {
-                digit.text =  digit.text! + operand
-            }
-//            else {
-//                isTyping = true
-//                digit.text =  operand
-//            }
+        expressionStack.append(displayValue)
+        if (canOperandBeEntered) {
+            digit.text =  digit.text! + operand
         }
+
         println("stack = \(expressionStack)")
         canOperandBeEntered = false
     }
