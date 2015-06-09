@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     @IBAction func displayDigit(sender: UIButton) {
         let number = sender.currentTitle!
-        
+
         if (isTyping) {
             digit.text =  digit.text! + number
         } else {
@@ -42,5 +42,8 @@ class ViewController: UIViewController {
         canOperandBeEntered = false
     }
     
+    @IBAction func clearScreen(sender: UIButton) {
+        digit.text = "0"
+    }
 }
 

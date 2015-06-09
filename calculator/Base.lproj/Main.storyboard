@@ -152,6 +152,9 @@
                                 <state key="normal" title="•">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFl-V3-kLS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtV-vh-sxx">
                                 <rect key="frame" x="136" y="467" width="104" height="125"/>
@@ -197,9 +200,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxn-4p-HxE">
                                 <rect key="frame" x="472" y="334" width="104" height="125"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal">
+                                <state key="normal" title="C">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zZC-mH-Tqd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdV-JG-mVt">
                                 <rect key="frame" x="472" y="467" width="104" height="125"/>
